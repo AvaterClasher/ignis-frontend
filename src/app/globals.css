@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/nursery/noUnknownAtRule: <As styles now req diff theme inline> */
 @import "tailwindcss";
 
 :root {
