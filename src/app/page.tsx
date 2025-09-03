@@ -1,8 +1,8 @@
 'use client';
 
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import TextRotate from '@/components/text-rotate';
 import {
   Accordion,
@@ -13,40 +13,10 @@ import {
 import { Button } from '@/components/ui/button';
 
 export default function LandingPage() {
-  const [showBanner, setShowBanner] = useState(false);
-
-  useEffect(() => {
-    const bannerDismissed = localStorage.getItem('ignis-banner-dismissed');
-    if (!bannerDismissed) {
-      setShowBanner(true);
-    }
-  }, []);
-
-  const dismissBanner = () => {
-    localStorage.setItem('ignis-banner-dismissed', 'true');
-    setShowBanner(false);
-  };
+  const router = useRouter();
 
   return (
     <div className="dark min-h-screen bg-background text-foreground">
-      {showBanner && (
-        <div className="relative bg-gradient-to-r from-orange-600 to-red-600 px-4 py-3 text-white">
-          <div className="container mx-auto text-center">
-            <p className="font-medium text-sm">
-              📢 Important: The hosted version of Ignis is currently not
-              available. Self-hosting is straightforward and fully documented in
-              our blog.
-            </p>
-          </div>
-          <button
-            className="-translate-y-1/2 absolute top-1/2 right-4 transform rounded-full p-1 hover:bg-white/20"
-            onClick={dismissBanner}
-          >
-            <X size={16} />
-          </button>
-        </div>
-      )}
-
       {/* Header */}
       <header className="border-border border-b">
         <div className="container mx-auto flex items-center justify-between px-4 py-4">
@@ -59,6 +29,7 @@ export default function LandingPage() {
           <div className="flex items-center space-x-3">
             <Button
               className="text-muted-foreground hover:bg-accent hover:text-foreground"
+              onClick={() => router.push('/sign-in')}
               size="sm"
               variant="ghost"
             >
@@ -66,6 +37,7 @@ export default function LandingPage() {
             </Button>
             <Button
               className="bg-transparent text-orange-500 hover:bg-accent hover:text-orange-500"
+              onClick={() => router.push('/sign-up')}
               size="sm"
             >
               Sign Up
