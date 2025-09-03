@@ -20,23 +20,12 @@ import { createJob, getJob, type Job } from '@/services/jobService';
 
 const languages = [
   { value: 'python', label: 'Python', extension: '.py' },
-  { value: 'javascript', label: 'JavaScript', extension: '.js' },
-  { value: 'typescript', label: 'TypeScript', extension: '.ts' },
-  { value: 'java', label: 'Java', extension: '.java' },
-  { value: 'csharp', label: 'C#', extension: '.cs' },
   { value: 'go', label: 'Go', extension: '.go' },
 ];
 
 const defaultCode: Record<string, string> = {
   python:
     'print("Hello from Python!")\n\n# Write your Python code here\nfor i in range(5):\n print(f"Count: {i}")',
-  javascript:
-    'console.log("Hello from JavaScript!");\n\n// Write your JavaScript code here\nfor (let i = 0; i < 5; i++) {\n console.log(`Count: ${i}`);\n}',
-  typescript:
-    'console.log("Hello from TypeScript!");\n\n// Write your TypeScript code here\nfor (let i: number = 0; i < 5; i++) {\n console.log(`Count: ${i}`);\n}',
-  java: 'public class Main {\n public static void main(String[] args) {\n System.out.println("Hello from Java!");\n \n // Write your Java code here\n for (int i = 0; i < 5; i++) {\n System.out.println("Count: " + i);\n }\n }\n}',
-  csharp:
-    'using System;\n\nclass Program {\n static void Main() {\n Console.WriteLine("Hello from C#!");\n \n // Write your C# code here\n for (int i = 0; i < 5; i++) {\n Console.WriteLine($"Count: {i}");\n }\n }\n}',
   go: 'package main\n\nimport "fmt"\n\nfunc main() {\n fmt.Println("Hello from Go!")\n \n // Write your Go code here\n for i := 0; i < 5; i++ {\n fmt.Printf("Count: %d\\n", i)\n }\n}',
 };
 
