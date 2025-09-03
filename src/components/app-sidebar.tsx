@@ -1,7 +1,7 @@
 'use client'; // Required for usePathname hook
 
 import clsx from 'clsx'; // A utility for constructing className strings conditionally
-import { Home, Key, Play, PlayCircle, Webhook } from 'lucide-react';
+import { Key, Play, PlayCircle, Webhook } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   Sidebar,
@@ -18,11 +18,11 @@ import { Separator } from './ui/separator';
 
 // Menu items (no changes needed here).
 const items = [
-  {
-    title: 'Dashboard',
-    url: '/dashboard',
-    icon: Home,
-  },
+  // {
+  //   title: 'Dashboard',
+  //   url: '/dashboard',
+  //   icon: Home,
+  // },
   {
     title: 'Playground',
     url: '/playground',
