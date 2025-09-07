@@ -1,7 +1,5 @@
-// import { useAuth } from '@clerk/nextjs';
 import axios from 'axios';
-
-const API_URL = 'http://localhost:8080/api/v1';
+import { API_URL } from './envService';
 
 export interface Job {
   id: number;
